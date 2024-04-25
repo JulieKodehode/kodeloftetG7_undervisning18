@@ -22,6 +22,14 @@
     // Checks if todoTask have content
     console.log(todoTasks);
 
+    // HOW TO SOLVE ARRAY ISSUE: Set this variable getting the taskListContainer(div) outside for loop
+    // Getting the div-element from the HTML
+    const taskListContainer = document.querySelector("#taskListContainer");
+    console.log(taskListContainer);
+
+    // HOW TO SOLVE ARRAY ISSUE: Set the textContent of the taskListContainer as empty string
+    taskListContainer.textContent = "";
+
     // Loops through our array and checks for new data
     for (
         let index = 0;
@@ -47,23 +55,23 @@
 
         // Given the new element some text content
         deleteButton.textContent = "Delete todo";
+        deleteButton.classList.add("deleteButton")
 
         // Added function to the new button-element
         deleteButton.addEventListener("click", function () {
             console.log("Click?")
             newListItem.remove();
             deleteButton.remove();
-        })
 
-        // Getting the div-element from the HTML
-        const taskListContainer = document.querySelector("#taskListContainer");
-        console.log(taskListContainer);
+            // HOW TO SOLVE ARRAY ISSUE: with the method splice we remove something from the array. So in this instance we wish to delete the li, the button and the content from the array.
+            todoTasks.splice(index, 1);
+        })
 
         // Returns the newly created li-element to the div-element
         taskListContainer.appendChild(newListItem);
 
-        // Returns the newly created button-element to the div-element
-        taskListContainer.appendChild(deleteButton);
+        // Returns the newly created button-element to the li-element
+        newListItem.appendChild(deleteButton);
     }
 }
 

@@ -47,21 +47,22 @@
 
     list-style-type: none;
     padding-inline-start: 0;
-    width: 100%;
+    min-width: 100%;
 }
 
 /* Li */
 .taskListItem {
     display: flex;
+    justify-content: space-around;
     align-items: center;
     padding: 8px;
 
     height: 30px;
-    min-width: 100%;
+    width: 100%;
     background-color: lightcoral;
 }
 
 .taskListContainer {
     display: flex;
-   flex-direction: column;
+    flex-direction: column;
 }
