@@ -60,3 +60,8 @@
     min-width: 100%;
     background-color: lightcoral;
 }
+
+.taskListContainer {
+    display: flex;
+   flex-direction: column;
+}
